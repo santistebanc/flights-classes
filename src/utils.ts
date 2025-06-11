@@ -47,7 +47,7 @@ export function getDeep(path: string[], obj: Record<string, any>) {
     return getDeep(path.slice(1), obj[path[0]])
 }
 
-export function flatObject(obj: Record<string, any>, checkContinue: (obj: Record<string, any>) => boolean, path: string[] = []): any[] {
+export function flatObject(obj: any, checkContinue: (obj: Record<string, any>) => boolean, path: string[] = []): any[] {
     if (typeof obj === 'object' && obj !== null && checkContinue(obj)) {
         return Object.entries(obj).flatMap(([k, v]) => flatObject(v, checkContinue, [...path, k]))
     }
