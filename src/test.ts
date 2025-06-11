@@ -49,20 +49,20 @@ const crawlDB = db({
 
 export const offers = store<{ flights: Store<Type<typeof Flight.schema>>, deals: Store<Type<typeof Deal.schema>> }>()
 
-const BER = Airport({ iata: 'BER' })
-const SLP = Airport({ iata: 'SLP' })
-const WAK = Airport({ iata: 'WAK' })
+// const BER = Airport({ iata: 'BER' })
+// const SLP = Airport({ iata: 'SLP' })
+// const WAK = Airport({ iata: 'WAK' })
 
-const AIRBERLIN = Airline({ name: 'AirBerlin' })
+// const AIRBERLIN = Airline({ name: 'AirBerlin' })
 
-const flight1 = Flight({ flightNumber: 'BV1234', airline: AIRBERLIN, from: BER, to: SLP, date: '2025-02-04' })
-const flight2 = Flight({ flightNumber: 'AB5678', airline: AIRBERLIN, from: SLP, to: BER, date: '2025-02-05' })
+// const flight1 = Flight({ flightNumber: 'BV1234', airline: AIRBERLIN, from: BER, to: SLP, date: '2025-02-04' })
+// const flight2 = Flight({ flightNumber: 'AB5678', airline: AIRBERLIN, from: SLP, to: BER, date: '2025-02-05' })
 
-    ; (async () => {
-        await myDB.push(flight1)
-        await crawlDB.push(flight2)
-        await crawlDB.push(WAK)
-        await myDB.push(WAK)
-        await myDB.pull()
-        console.log('local: \n\n', inspect(localDB, { colors: true, depth: null }), '\n\n\nserver: \n\n', inspect(serverDB, { colors: true, depth: null }))
-    })()
+//     ; (async () => {
+//         await myDB.push(flight1)
+//         await crawlDB.push(flight2)
+//         await crawlDB.push(WAK)
+//         await myDB.push(WAK)
+//         await myDB.pull()
+//         console.log('local: \n\n', inspect(localDB, { colors: true, depth: null }), '\n\n\nserver: \n\n', inspect(serverDB, { colors: true, depth: null }))
+//     })()

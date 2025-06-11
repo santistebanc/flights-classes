@@ -4,7 +4,11 @@ import { makeType } from "any-db"
 
 export const Airport = makeType('Airport', {
     shape: {
-        iata: z.string().length(3)
+        iata: z.string().length(3),
+        country: z.string().length(2),
+        city: z.string(),
+        name: z.string(),
+        timezone: z.string(),
     },
     id: ({ iata }) => iata,
 })
@@ -22,7 +26,8 @@ export const Flight = makeType('Flight', {
         airline: Airline.schema,
         from: Airport.schema,
         to: Airport.schema,
-        date: z.iso.date(),
+        departure: z.date(),
+        arrival: z.date(),
     },
     id: ({ flightNumber, date, from, to }) => `${flightNumber}-${date}-${from.iata}-${to.iata}`
 })
