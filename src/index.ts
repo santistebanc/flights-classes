@@ -46,7 +46,7 @@ export const Deal = makeType('Deal', {
         source: z.string(),
         target: z.union([Flight.schema, Bundle.schema]),
         link: z.string(),
-        date: z.iso.date(),
+        date: z.string(),
     },
     id: ({ target, price, dealer, source }) => `${target.type}-${target.id}-${price}-${dealer}-${source}`
 })
