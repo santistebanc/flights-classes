@@ -1,0 +1,25 @@
+{
+  "name": "flights-classes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "start": "tsx test.ts",
+    "prepare": "npm run build",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/short-hash": "^1.0.3",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "any-db": "github:santistebanc/any-db",
+    "short-hash": "^1.0.0",
+    "zod": "^3.25.56"
+  }
+}
