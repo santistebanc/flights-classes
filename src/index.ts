@@ -26,8 +26,8 @@ export const Flight = makeType('Flight', {
         airline: Airline.schema,
         from: Airport.schema,
         to: Airport.schema,
-        departure: z.date(),
-        arrival: z.date(),
+        departure: z.string(),
+        arrival: z.string(),
     },
     id: ({ flightNumber, date, from, to }) => `${flightNumber}-${date}-${from.iata}-${to.iata}`
 })
