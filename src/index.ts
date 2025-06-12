@@ -1,6 +1,7 @@
 import shortHash from "short-hash";
 import { z } from "zod/v4";
 import { makeType } from "any-db"
+import { Temporal } from "temporal-polyfill";
 
 export const Airport = makeType('Airport', {
     shape: {
@@ -29,7 +30,10 @@ export const Flight = makeType('Flight', {
         departure: z.string(),
         arrival: z.string(),
     },
-    id: ({ flightNumber, date, from, to }) => `${flightNumber}-${date}-${from.iata}-${to.iata}`
+    id: ({ flightNumber, departure, from, to }) => {
+        const date = Temporal.ZonedDateTime.from(departure).toPlainDate().toString()
+        return `${flightNumber}-${date}-${from.iata}-${to.iata}`
+    }
 })
 
 export const Bundle = makeType('Bundle', {

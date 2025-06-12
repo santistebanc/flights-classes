@@ -20,6 +20,7 @@
   "dependencies": {
     "any-db": "github:santistebanc/any-db",
     "short-hash": "^1.0.0",
+    "temporal-polyfill": "^0.3.0",
     "zod": "^3.25.56"
   }
 }
